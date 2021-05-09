@@ -1,0 +1,37 @@
+.white-key {
+    display: inline-block;
+    padding: 10px;
+    color: #ffffff;
+    border-color: black;
+    background-color: white;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 10px 10px 25px 10px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    height: 200px;
+    width: 50px;
+    margin-bottom: 10px;
+  }
+
+.black-key {
+    display: inline-block;
+    padding: 10px;
+    color: #ffffff;
+    background-color:  black;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 10px 10px 25px 10px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    height: 200px;
+    width: 25px;
+    margin-bottom: 10px;
+  }
+
+.keyboard {
+    margin: auto;
+    margin-top: 100px;
+    width: fit-content;
+}
+
+h1 {
+  width: fit-content;
+  margin: 100px auto;
+}
