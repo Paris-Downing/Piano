@@ -1,8 +1,8 @@
 .white-key {
+    z-index: 0;
     display: inline-block;
     padding: 10px;
-    color: #ffffff;
-    border-color: black;
+    color: black;
     background-color: white;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     box-shadow: 10px 10px 25px 10px rgba(0, 0, 0, 0.75);
@@ -12,18 +12,32 @@
     margin-bottom: 10px;
   }
 
+.white-key + .white-key{
+  margin-left: 0;
+}
+
 .black-key {
+    margin-left: -10px;
+    margin-right: -10px;
+    position: absolute;
     display: inline-block;
     padding: 10px;
-    color: #ffffff;
+    color: black;
     background-color:  black;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 10px 10px 25px 10px rgba(0, 0, 0, 0.75);
-    border-radius: 10px;
-    height: 200px;
-    width: 25px;
+    /* box-shadow: 10px 10px 25px 10px rgba(0, 0, 0, 0.75); */
+    border-radius: 5px;
+    height: 150px;
+    width: 20px;
     margin-bottom: 10px;
+    
   }
+
+span{
+  display: block;
+  text-align: center;
+
+}
 
 .keyboard {
     margin: auto;
@@ -31,7 +45,17 @@
     width: fit-content;
 }
 
-h1 {
+h1, form {
   width: fit-content;
   margin: 100px auto;
+  text-align: center;
+
+}     
+
+form div input {
+  height: 200px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: pink;
 }
