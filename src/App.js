@@ -101,7 +101,7 @@ const App = () => {
         //major 2nd
         return chordType(0) + "2";
       } 
-      if(pressedKeys[0] + 3 === pressedKeys[1])
+      else if(pressedKeys[0] + 3 === pressedKeys[1])
       {
         //minor 3nd
         return chordType(0) + "m3";
@@ -116,7 +116,7 @@ const App = () => {
         //fourth
         return chordType(0) + "4";
       } 
-      if(pressedKeys[0] + 6 === pressedKeys[1])
+      else if(pressedKeys[0] + 6 === pressedKeys[1])
       {
         //tritone
         return chordType(0) + "TT";
@@ -125,6 +125,26 @@ const App = () => {
       {
         //fifth
         return chordType(0) + "5";
+      }
+      else if(pressedKeys[0] + 8 === pressedKeys[1])
+      {
+        //minor 6th
+        return chordType(0) + "m6";
+      }
+      else if(pressedKeys[0] + 9 === pressedKeys[1])
+      {
+        //major 6th
+        return chordType(0) + "6";
+      }
+      else if(pressedKeys[0] + 10 === pressedKeys[1])
+      {
+        //minor 7th
+        return chordType(0) + "m7";
+      }
+      else if(pressedKeys[0] + 11 === pressedKeys[1])
+      {
+        //major 7th
+        return chordType(0) + "7";
       }
     }
     else if(pressedKeys.length === 3)
@@ -201,6 +221,16 @@ const App = () => {
       {
         //minor 6th
         return chordType(0) + "m6";
+      }
+      else if((pressedKeys[0] + 2 === pressedKeys[1]) && (pressedKeys[1] + 2 === pressedKeys[2]) && (pressedKeys[2] + 3 === pressedKeys[3]))
+      {
+        //added 2nd
+        return chordType(0) + "add2";
+      }
+      else if((pressedKeys[0] + 4 === pressedKeys[1]) && (pressedKeys[1] + 3 === pressedKeys[2]) && (pressedKeys[2] + 7 === pressedKeys[3]))
+      {
+        //added 9th
+        return chordType(0) + "add9";
       }
     }
     else 
