@@ -7,7 +7,7 @@ Identifies chords
 - [ ] Add sounds for keys
 - [ ] Identify chords by name
   - [ ] Recognize flats 
-- [ ] Adding labels to keys
+- [x] Adding labels to keys
 - [ ] Add a legend that can be hidden
 - [ ] More chords to be identified
 - [ ] Guitar version(?)

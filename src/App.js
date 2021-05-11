@@ -7,13 +7,28 @@ const Key = props => {
   const [keyColor, setKeyColor] = useState(props.isWhite === true ? "white" : "black");
   const originalColor = props.isWhite === true ? "white" : "black";
   var keyName = props.octaveKeyLabel(props.id);
+  // const [audio] = useState(new Audio("../assets/mp3 Notes/C0.mp3"));
+  
+  // useEffect(() => {
+  //   audio.addEventListener('ended', () => setPlaying(false));
+  //   return () => {
+  //     audio.removeEventListener('ended', () => setPlaying(false));
+  //   };
+  // }, []);
+
   // console.log("keyName: " + props.id + keyName);
+  // console.log(audio);
 
   //toggles color between purple and original color    
   function toggleColor() {
     setKeyColor(keyColor === originalColor ? "purple" : originalColor);
+    const audioEl = document.getElementsByClassName("audio-element")[0];
+    console.log(audioEl);
+    audioEl.play()
+    // audio.play();
     props.handleKeyClick(props.id, keyColor);
   }
+
 
   // useEffect(() => {
   //   console.log("keyName: " + keyName)
@@ -304,6 +319,10 @@ const App = () => {
     </div>
     <h1></h1>
 
+    <audio className="audio-element">
+          <source src="file:///C:/Users/downi/Documents/Visual Studio 2019/Piano/assets/mp3Notes/a3.mp3"></source>
+        </audio>
+        
     <form>
       <div className="form-group">
         <label >Enter a chord</label>
