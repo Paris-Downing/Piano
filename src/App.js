@@ -89,17 +89,90 @@ const App = () => {
   }, [pressedKeys]);
 
   function chord(){
-    if(pressedKeys.length === 3)
+    if(pressedKeys.length === 2)
+    {
+      if(pressedKeys[0] + 1 === pressedKeys[1])
+      {
+        //minor 2nd
+        return chordType(0) + "m2";
+      }
+      else if(pressedKeys[0] + 2 === pressedKeys[1])
+      {
+        //major 2nd
+        return chordType(0) + "2";
+      } 
+      if(pressedKeys[0] + 3 === pressedKeys[1])
+      {
+        //minor 3nd
+        return chordType(0) + "m3";
+      }
+      else if(pressedKeys[0] + 4 === pressedKeys[1])
+      {
+        //major 3nd
+        return chordType(0) + "3";
+      } 
+      else if(pressedKeys[0] + 5 === pressedKeys[1])
+      {
+        //fourth
+        return chordType(0) + "4";
+      } 
+      if(pressedKeys[0] + 6 === pressedKeys[1])
+      {
+        //tritone
+        return chordType(0) + "TT";
+      }
+      else if(pressedKeys[0] + 7 === pressedKeys[1])
+      {
+        //fifth
+        return chordType(0) + "5";
+      }
+    }
+    else if(pressedKeys.length === 3)
     {
       if((pressedKeys[0] + 4 === pressedKeys[1]) && (pressedKeys[1] + 3 === pressedKeys[2]))
       {
         //chord is major
-        return chordType();
+        return chordType(0);
       }
       else if((pressedKeys[0] + 3 === pressedKeys[1]) && (pressedKeys[1] + 4 === pressedKeys[2]))
       {
         //chord is minor 
-        return chordType() + "m";
+        return chordType(0) + "m";
+      }
+      else if((pressedKeys[0] + 6 === pressedKeys[1]) && (pressedKeys[1] + 2 === pressedKeys[2]))
+      {
+        //chord is a seventh
+        return chordType(2) + "7/" + chordType(0);
+      }
+      else if((pressedKeys[0] + 5 === pressedKeys[1]) && (pressedKeys[1] + 4 === pressedKeys[2]))
+      {
+        //Major second inversion
+        return chordType(1) + "/" + chordType(0);
+      }
+      else if((pressedKeys[0] + 4 === pressedKeys[1]) && (pressedKeys[1] + 5 === pressedKeys[2]))
+      {
+        //minor 6th/major 6th
+        return chordType(2) + "m6/" + chordType(0) + "6";
+      }
+      else if((pressedKeys[0] + 3 === pressedKeys[1]) && (pressedKeys[1] + 3 === pressedKeys[2]))
+      {
+        //diminished
+        return chordType(0) + "dim";
+      }
+      else if((pressedKeys[0] + 2 === pressedKeys[1]) && (pressedKeys[1] + 5 === pressedKeys[2]))
+      {
+        //sustained 2
+        return chordType(0) + "sus2"; 
+      }
+      else if((pressedKeys[0] + 5 === pressedKeys[1]) && (pressedKeys[1] + 2 === pressedKeys[2]))
+      {
+        //sustained 4
+        return chordType(0) + "sus4";
+      }
+      else if((pressedKeys[0] + 4 === pressedKeys[1]) && (pressedKeys[1] + 4 === pressedKeys[2]))
+      {
+        //augmented
+        return chordType(0) + "aug";
       }
     }
     else if(pressedKeys.length === 4)
@@ -107,25 +180,35 @@ const App = () => {
       if((pressedKeys[0] + 4 === pressedKeys[1]) && (pressedKeys[1] + 3 === pressedKeys[2]) && (pressedKeys[2] + 3 === pressedKeys[3]))
       {
         //chord is 7
-        return chordType() + "7";
+        return chordType(0) + "7";
       }
       else if((pressedKeys[0] + 4 === pressedKeys[1]) && (pressedKeys[1] + 3 === pressedKeys[2]) && (pressedKeys[2] + 4 === pressedKeys[3]))
       {
         //chord is major 7
-        return chordType() + "maj7";
+        return chordType(0) + "maj7";
       }
       else if((pressedKeys[0] + 3 === pressedKeys[1]) && (pressedKeys[1] + 4 === pressedKeys[2]) && (pressedKeys[2] + 3 === pressedKeys[3]))
       {
         //chord is minor 7
-        return chordType() + "m7";
+        return chordType(0) + "m7";
+      }
+      else if((pressedKeys[0] + 4 === pressedKeys[1]) && (pressedKeys[1] + 3 === pressedKeys[2]) && (pressedKeys[2] + 2 === pressedKeys[3]))
+      {
+        //major 6th
+        return chordType(0) + "6";
+      }
+      else if((pressedKeys[0] + 3 === pressedKeys[1]) && (pressedKeys[1] + 4 === pressedKeys[2]) && (pressedKeys[2] + 2 === pressedKeys[3]))
+      {
+        //minor 6th
+        return chordType(0) + "m6";
       }
     }
     else 
       return "";
   }
 
-  function chordType(){
-    switch(pressedKeys[0])
+  function chordType(i){
+    switch(pressedKeys[i] % 12)
     {
       case 0: 
         return "C";
@@ -151,8 +234,6 @@ const App = () => {
         return "A#";
       case 11:
         return "B";
-      // default: 
-      //   return "";
     }
   }
 
