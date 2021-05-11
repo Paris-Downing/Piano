@@ -8,6 +8,7 @@ Identifies chords
 - [ ] Identify chords by name
   - [ ] Recognize flats 
 - [ ] Adding labels to keys
+- [ ] Add a legend that can be hidden
 - [ ] More chords to be identified
 - [ ] Guitar version(?)
 - [ ] Ukulele version(?)
